@@ -1,37 +1,31 @@
-# Friday Night Funkin' — Week 1
+# Friday Night Funkin' — Weeks 1 + 2
 
-An independent Canvas / Web Audio recreation of classic Week 1: Bopeebo, Fresh and Dad Battle. Story mode, freeplay, Easy / Normal / Hard, animated original artwork, music, vocals, held notes, scoring, pause/retry, saved high scores and options.
+Independent Canvas / Web Audio browser recreation with GitHub Pages hosting. Original game and assets by ninjamuffin99, PhantomArcade, evilsk8r, Kawai Sprite and the Funkin Crew. [Support the original game](https://ninja-muffin24.itch.io/funkin). See NOTICE, LICENSE and provenance.json for attribution.
 
-This repository contains the static release. Open the GitHub Pages site to play. All paths are relative; no build step, dependencies or server backend are needed.
+## Songs
 
-## GitHub Pages
+Story mode includes Daddy Dearest (Bopeebo, Fresh, Dad Battle) and Spooky Month (Spookeez, South, Monster). Freeplay also includes the available Erect/Nightmare and Pico Mix versions: 43 charts across six base songs and ten variations. Monster has its original three difficulties and no invented Pico/Erect version.
 
-In Settings → Pages, choose **Deploy from a branch → main → / (root)**.
+## Play
 
-## Controls
+Arrows or bound note keys play; Enter confirms or pauses; Escape returns. Options includes timing offset, rebinding, scrolling, practice, autoplay, volume and reduced motion. Scores are saved separately per song, difficulty and character. Practice, autoplay and custom playtests do not save ranked scores.
 
-Arrows or A/S/W/D to play. Enter to select/pause. Escape to return/resume. F for fullscreen, 0 to mute, -/= for volume. Rebind note keys and change timing, scrolling, volume, practice and autoplay in Options. Touchscreens support tapping and holding the player lanes.
+Freeplay supports previews (Space), favorites (F), search (Ctrl+F), alphabet filters, sorting, Random, instrumental selection (I), character selection (Tab) and the chart editor (7). Character selection replays the original spotlight movie, stage and character animation timelines, music, locked slots, confirmation and exit sequence.
 
-## Source and credits
-
-The new browser engine is bundled, with readable module sections, in app.js. Original assets, fonts and all nine charts come from [FunkinCrew/Funkin v0.2.7.1](https://github.com/FunkinCrew/Funkin/tree/v0.2.7.1); see LICENSE, NOTICE and provenance.json. Original game by **ninjamuffin99, PhantomArcade, evilsk8r and Kawai Sprite**. [Support the original game](https://ninja-muffin24.itch.io/funkin).
-
-This fan recreation is not an official release or an exact HaxeFlixel port. The options/results screens and browser timing implementation are custom. Only Week 1 is included.
-
-## Modern freeplay and remixes
-
-The modern menu includes the original DJ Boyfriend/Pico animations, previews, favorites, alphabet filters, search, sorting, Random, character and instrumental selection, album artwork, and records per variant.
-
-There are **24 charts**: nine classic Easy/Normal/Hard charts, six Boyfriend Erect/Nightmare charts, and nine Pico Mix charts. The remixes include their matching instrumentals/vocals and the Erect stage, Pico, Nene and A-Bot artwork. These newer assets come from the user's installed game and retain their creators' copyrights; consult NOTICE and variant-catalog.json.
-
-Freeplay: Space previews, F favorites, Ctrl+F searches, Tab chooses a character, I chooses an instrumental, Home/End jumps through the list. Left/right chooses difficulty, Enter plays.
+Characters face the opponent. A-Bot's seven-column display uses live FFT audio analysis. Modern stages use the matching Girlfriend artwork and corrected Nene/speaker positions. At 150 BPM and higher, player/opponent idle dances restart every two beats. Spooky Month includes its mansion stages, lightning and thunder.
 
 ## Chart editor
 
-Press **7** from gameplay or freeplay. Add/delete/select notes and sustains; edit BPM, speed, turn ownership, section length and note properties; copy/paste/mirror/swap/insert/delete sections; scrub and loop audio; use metronome and note clicks; undo/redo and autosave; import/export classic FNF JSON; load local audio; press Enter to playtest. Custom charts, practice and autoplay do not save ranked scores.
+Press 7 from play/freeplay. Add, select and delete notes; edit sustains, timing, BPM, speed and sections; copy/paste/mirror/swap sections; scrub or loop audio; undo/redo; import/export classic JSON; load local audio; playtest with Enter. Changes autosave locally. Space plays/pauses, A/D changes section, W/S scrubs, Q/E edits sustain, Ctrl+Z/Y undo/redo and Ctrl+S exports.
 
-Space plays/pauses, A/D changes section (Shift moves four), W/S or wheel scrubs, Q/E edits a selected sustain, Tab changes panels, Ctrl+Z/Y undoes/redoes, Ctrl+S exports, R resets section (Shift resets song). Character names and alternate-animation flags are retained in exported charts; this project renders the included Week 1 characters.
+## Mods
 
-## Performance
+Open Mods from the main menu, or press M in freeplay. Choose a V-Slice ZIP/FNFC package. The browser saves the archive locally using IndexedDB and discovers nested song folders, variations, declared difficulties, charts, instrumentals, split vocals and audio offsets. Enable, disable or remove packages from the manager. Imported songs appear in freeplay and can open in the chart editor.
 
-Large classic atlases were repacked and reduced from688MiB to188MiB decoded while keeping logical frame geometry. Gameplay sounds are decoded before the countdown, audio buffers use a bounded cache, and a timer fallback keeps rendering when a browser delays animation frames.
+Custom Sparrow/Animate character assets and standard stage props are supported. Common data events include camera focus/zoom, animation, camera bop, scroll speed, dance rate and health icons. Browser event behavior approximates the native implementation; script-defined mechanics, Haxe/native extensions, shaders and custom note styles do not execute. Each package includes a compatibility report. This is not a full HaxeFlixel engine port, and arbitrary V-Slice mods may need unsupported features.
+
+## Hosting
+
+Static relative paths, no backend or build dependencies. In repository Settings → Pages, deploy main / root. Serve the modular source with node tools/serve.mjs; run checks with node --test tests/*.test.mjs. The GitHub release bundles readable module sections in app.js and flattens the asset paths.
+
+Large classic atlases are repacked to reduce decoded memory; effects load before countdown, music buffers use a bounded cache, and a render watchdog handles browsers delaying animation frames. Desktop performance still depends on browser, hardware and imported asset sizes.

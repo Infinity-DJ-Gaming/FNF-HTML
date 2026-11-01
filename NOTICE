@@ -35,3 +35,8 @@ frame geometry. Adobe Animate timelines were flattened into compact atlases.
 Modern charts were converted into the classic format without changing note
 times, ownership or sustain lengths. Split vocal stems were synchronized
 and merged for playback in this engine.
+
+Week 2 songs, Spooky Month stage artwork, character-select spotlight movie,
+music and animation timelines are also extracted from the same installed game.
+The ZIP mod reader and compatibility layer are an independent browser
+implementation; imported archives stay in browser storage and are not uploaded.
