@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="A fan-made recreation of classic Friday Night Funkin' Week 1. Bopeebo, Fresh, and Dad Battle, with story mode, freeplay, and three difficulties.">
+  <title>Friday Night Funkin' — Week 1</title>
+  <link rel="icon" href="sick.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <main id="game" aria-label="Friday Night Funkin' Week 1">
+    <canvas id="screen" width="1280" height="720" tabindex="0" aria-label="Game screen. Use arrows to navigate, Enter to select, Escape to go back. Play notes with arrows or WASD."></canvas>
+    <div id="buttons" aria-label="Game controls"></div>
+    <p id="announcement" class="sr-only" aria-live="polite"></p>
+    <div id="boot"><strong>FRIDAY NIGHT FUNKIN'</strong><span id="boot-status">Loading the good stuff…</span><progress id="boot-progress" max="100" value="0"></progress><button id="boot-retry" hidden>Try again</button></div>
+    <noscript>This game needs JavaScript enabled to run.</noscript>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

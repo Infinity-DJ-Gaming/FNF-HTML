@@ -1,0 +1,37 @@
+Friday Night Funkin' — classic Week 1 browser recreation
+
+Original game by ninjamuffin99 (programming), PhantomArcade and evilsk8r
+(art and animation), and Kawai Sprite (music).
+
+This fan-made browser implementation is independent of The Funkin' Crew.
+It is not an official release and does not imply their endorsement.
+
+Original visual assets, fonts, audio and charts were obtained from the
+FunkinCrew/Funkin repository at tag v0.2.7.1:
+https://github.com/FunkinCrew/Funkin/tree/v0.2.7.1
+
+The original tag's Apache 2.0 LICENSE is included in this distribution.
+The assets are from that historical tag, not the current funkin.assets tree.
+Assets retain their original names and artwork. Sparrow XML sprite indexes
+are also converted into assets/atlases.json; invalid nameless entries are omitted.
+
+The JavaScript Canvas/Web Audio engine, controls, settings, accessibility
+hit targets, result screen, and GitHub Pages packaging are a new implementation.
+This is a recreation of the classic Week 1 experience, not a verbatim Haxe port.
+
+Friday Night Funkin' and its logo belong to their respective owners.
+Support the original game: https://ninja-muffin24.itch.io/funkin
+
+Modern menu artwork, character animation, Erect/Pico arrangements and charts
+were extracted from the user's installed Friday Night Funkin archive.
+These modern assets retain their respective creators' copyrights; the
+historical Apache license above describes the classic tagged distribution.
+See assets/modern/provenance.json and assets/variants/catalog.json for the
+specific source entries, musical credits and chart credits.
+
+Classic sprite sheets were mechanically repacked, duplicate texture pixels
+removed, and physical texture resolution reduced while preserving logical
+frame geometry. Adobe Animate timelines were flattened into compact atlases.
+Modern charts were converted into the classic format without changing note
+times, ownership or sustain lengths. Split vocal stems were synchronized
+and merged for playback in this engine.
