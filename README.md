@@ -1,31 +1,41 @@
-# Friday Night Funkin' — Weeks 1 + 2
+# Friday Night Funkin' — Tutorial + Weeks 1–4
 
-Independent Canvas / Web Audio browser recreation with GitHub Pages hosting. Original game and assets by ninjamuffin99, PhantomArcade, evilsk8r, Kawai Sprite and the Funkin Crew. [Support the original game](https://ninja-muffin24.itch.io/funkin). See NOTICE, LICENSE and provenance.json for attribution.
+Independent Canvas / Web Audio browser recreation for GitHub Pages. Original game, artwork and music by ninjamuffin99, PhantomArcade, evilsk8r, Kawai Sprite and the Funkin Crew. [Support the original game](https://ninja-muffin24.itch.io/funkin). See NOTICE, LICENSE and provenance.json for attribution.
 
-## Songs
+## Songs and play modes
 
-Story mode includes Daddy Dearest (Bopeebo, Fresh, Dad Battle) and Spooky Month (Spookeez, South, Monster). Freeplay also includes the available Erect/Nightmare and Pico Mix versions: 43 charts across six base songs and ten variations. Monster has its original three difficulties and no invented Pico/Erect version.
+Story and freeplay include Tutorial, Daddy Dearest, Spooky Month, Pico and Mommy Mearest: 13 base songs and 83 difficulty charts. The available original Erect/Nightmare and Pico Mix arrangements are included with synchronized vocals. Variants absent from the installed game are not invented (for example, no MILF Erect or Week 4 Pico Mix).
 
-## Play
+4K keeps the original charts. Switch to 6K in Options or with 6 in freeplay: LEFT, UP, RIGHT, LEFT, DOWN, RIGHT. Default bindings are S, D, F, J, K, L. Each song gets deterministic extra notes while retaining original note times, sustains, side ownership and arrow direction. 6K records are separate. Bindings can be changed in Options.
 
-Arrows or bound note keys play; Enter confirms or pauses; Escape returns. Options includes timing offset, rebinding, scrolling, practice, autoplay, volume and reduced motion. Scores are saved separately per song, difficulty and character. Practice, autoplay and custom playtests do not save ranked scores.
+Arrows or bound keys play notes. Enter selects/pauses; Escape returns. Options includes offset/calibration, scroll speed/direction, centered notes, practice, autoplay, volume and reduced motion. Missing notes deducts more health. Practice, autoplay and custom playtests do not save ranked scores.
 
-Freeplay supports previews (Space), favorites (F), search (Ctrl+F), alphabet filters, sorting, Random, instrumental selection (I), character selection (Tab) and the chart editor (7). Character selection replays the original spotlight movie, stage and character animation timelines, music, locked slots, confirmation and exit sequence.
+Mobile devices automatically get full-width centered player lanes, downscroll, a small opponent strumline in the corner and large touch columns. Keep a finger held and slide into a different column to release the old lane and press the next; multiple fingers, holds and touch cancellation are supported. Mobile layout can also be forced on/off in Options. The game fills the viewport.
 
-Characters face the opponent. A-Bot's seven-column display uses live FFT audio analysis. Modern stages use the matching Girlfriend artwork and corrected Nene/speaker positions. At 150 BPM and higher, player/opponent idle dances restart every two beats. Spooky Month includes its mansion stages, lightning and thunder.
+## Menus, characters and results
+
+Modern freeplay supports previews (Space), favorites (F), search (Ctrl+F), alphabet filters, sorting, Random, instrumental selection (I), character selection (Tab), mods (M) and the chart editor (7). Pico has the original gun blueprint backing card. Character selection replays the spotlight movie and original stage/character timelines, music, locked slots, confirmation and exit sequence.
+
+Native BF/Pico/GF/Nene timelines retain special poses and reactions. Semantic animation events resolve through character definitions, with visible fallbacks for unknown names. Player orientation uses native role-aware flipping for included and imported characters. At 150 BPM and above, player/opponent idle bops use two beats; partners alternate both rocking halves. A-Bot's display uses live audio FFT analysis. Erect stages include their crowd, lighting, props and revised floor/speaker placement. Philly train and limo dancers/fast-car effects are included.
+
+Freeplay ends with a song result. Story mode ends with one combined result after the whole week. Native BF/Pico artwork, music and rank-dependent animation packs cover Gold Perfect, Perfect, Excellent, Great, Good and Loss. Rank uses the original completion formula; the gameplay accuracy display uses weighted hit judgements. Totals, max combo, judgements and misses are shown.
 
 ## Chart editor
 
-Press 7 from play/freeplay. Add, select and delete notes; edit sustains, timing, BPM, speed and sections; copy/paste/mirror/swap sections; scrub or loop audio; undo/redo; import/export classic JSON; load local audio; playtest with Enter. Changes autosave locally. Space plays/pauses, A/D changes section, W/S scrubs, Q/E edits sustain, Ctrl+Z/Y undo/redo and Ctrl+S exports.
+Press 7 in play/freeplay. The gray inspector follows the supplied five-tab reference: Charting, Events, Note, Section, Song. Add/select/delete/duplicate notes, edit sustains and parameters, change BPM/speed/offset, choose difficulty/cast/stage, swap/mirror/copy/paste/insert/delete sections, scrub/loop audio, adjust track volumes, enable metronome/note clicks, undo/redo and autosave. Import/export classic chart JSON, local audio and events-only JSON. Enter playtests the current chart. Included note atlases can be selected by name; unavailable custom note styles are preserved in JSON and use the standard arrows.
 
-## Mods
+Events supports add/update/delete/duplicate, timestamps, typed fields, raw JSON and timeline markers. Standard camera focus/zoom/bop, animation, per-side scroll speed, target dance rate and health-icon events are implemented. Unknown events and note parameters survive export. Space plays/pauses, A/D changes section, W/S scrubs, Q/E changes sustain, Ctrl+Z/Y undoes/redoes, Ctrl+S exports and 7 exits.
 
-Open Mods from the main menu, or press M in freeplay. Choose a V-Slice ZIP/FNFC package. The browser saves the archive locally using IndexedDB and discovers nested song folders, variations, declared difficulties, charts, instrumentals, split vocals and audio offsets. Enable, disable or remove packages from the manager. Imported songs appear in freeplay and can open in the chart editor.
+This is a browser editor modeled on the supplied legacy gray screenshot, rather than a full port of V-Slice's modern HaxeUI editor.
 
-Custom Sparrow/Animate character assets and standard stage props are supported. Common data events include camera focus/zoom, animation, camera bop, scroll speed, dance rate and health icons. Browser event behavior approximates the native implementation; script-defined mechanics, Haxe/native extensions, shaders and custom note styles do not execute. Each package includes a compatibility report. This is not a full HaxeFlixel engine port, and arbitrary V-Slice mods may need unsupported features.
+## Mods and compatibility
 
-## Hosting
+Open Mods in the main menu or press M in freeplay. Import a V-Slice ZIP/FNFC package. Archives stay in local IndexedDB; they are not uploaded. The manager discovers nested song folders, variations, difficulties, charts, instrumentals, split vocals and track offsets. Enable/disable/remove packages locally. Imported songs appear in freeplay and open in the editor.
 
-Static relative paths, no backend or build dependencies. In repository Settings → Pages, deploy main / root. Serve the modular source with node tools/serve.mjs; run checks with node --test tests/*.test.mjs. The GitHub release bundles readable module sections in app.js and flattens the asset paths.
+Sparrow and Animate character artwork, per-animation asset paths, metadata flips/frame indices, standard stage images/props and common data events are supported. Each package includes a compatibility report. Browser camera/stage behavior approximates native behavior; Haxe/HXC scripts, native extensions, GPU shaders, script-specific cutscenes and arbitrary custom note mechanics do not execute. This is not a complete HaxeFlixel engine port, and arbitrary V-Slice mods may require unsupported features.
 
-Large classic atlases are repacked to reduce decoded memory; effects load before countdown, music buffers use a bounded cache, and a render watchdog handles browsers delaying animation frames. Desktop performance still depends on browser, hardware and imported asset sizes.
+## Hosting and performance
+
+All paths are relative. No backend, runtime dependency installation or build step is needed for the static release. In GitHub Settings → Pages, deploy main / root. Readable engine modules are bundled as sections in app.js; assets are flattened for distribution. Modular source can be served with `node tools/serve.mjs`. Run `node --test tests/*.test.mjs` and `node tools/check.mjs` for validation.
+
+Classic atlases were repacked with preserved logical frame geometry. Stage images load as needed, effects decode before countdown, song audio uses a bounded cache, and viewport geometry is read once per frame. Performance still depends on browser, device and imported asset sizes.

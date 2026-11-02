@@ -40,3 +40,13 @@ Week 2 songs, Spooky Month stage artwork, character-select spotlight movie,
 music and animation timelines are also extracted from the same installed game.
 The ZIP mod reader and compatibility layer are an independent browser
 implementation; imported archives stay in browser storage and are not uploaded.
+
+Tutorial, Weeks 3/4, native result screens, full character special/reaction
+symbol trees, Pico gun backing-card layers and Erect stage props were
+extracted from the user's installed V-Slice 0.8.6 assets. Original authors'
+copyrights remain intact. Native metadata, arrangement/chart credits and
+source paths are retained in assets/native-content.json,
+assets/native-extras/*.json, assets/native-results/*.json and the variant
+catalog. The historical LICENSE is not a claim that all modern artwork is
+licensed under that historical license. The six-key arrangement is generated
+by this browser recreation and is not an original Funkin Crew chart.
