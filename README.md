@@ -1,16 +1,22 @@
-# Friday Night Funkin' — Tutorial + Weeks 1–4
+# Friday Night Funkin' — Tutorial + Weeks 1–6
 
 Independent Canvas / Web Audio browser recreation for GitHub Pages. Original game, artwork and music by ninjamuffin99, PhantomArcade, evilsk8r, Kawai Sprite and the Funkin Crew. [Support the original game](https://ninja-muffin24.itch.io/funkin). See NOTICE, LICENSE and provenance.json for attribution.
 
 ## Songs and play modes
 
-Story and freeplay include Tutorial, Daddy Dearest, Spooky Month, Pico and Mommy Mearest: 13 base songs and 83 difficulty charts. The available original Erect/Nightmare and Pico Mix arrangements are included with synchronized vocals. Variants absent from the installed game are not invented (for example, no MILF Erect or Week 4 Pico Mix).
+Story and freeplay include Tutorial, Daddy Dearest, Spooky Month, Pico, Mommy Mearest, Red Snow and Hating Simulator: 19 base songs and 123 difficulty charts. The available original Erect/Nightmare and Pico Mix arrangements are included with synchronized vocals. Variants absent from the installed game are not invented (for example, no MILF Erect or Week 4 Pico Mix).
 
 4K keeps the original charts. Switch to 6K in Options or with 6 in freeplay: LEFT, UP, RIGHT, LEFT, DOWN, RIGHT. Default bindings are S, D, F, J, K, L. Each song gets deterministic extra notes while retaining original note times, sustains, side ownership and arrow direction. 6K records are separate. Bindings can be changed in Options.
 
 Arrows or bound keys play notes. Enter selects/pauses; Escape returns. Options includes offset/calibration, scroll speed/direction, centered notes, practice, autoplay, volume and reduced motion. Missing notes deducts more health. Practice, autoplay and custom playtests do not save ranked scores.
 
 Mobile devices automatically get full-width centered player lanes, downscroll, a small opponent strumline in the corner and large touch columns. Keep a finger held and slide into a different column to release the old lane and press the next; multiple fingers, holds and touch cancellation are supported. Mobile layout can also be forced on/off in Options. The game fills the viewport.
+
+## Original Week 5/6 sequences
+
+Cocoa, Eggnog, Winter Horrorland, Senpai, Roses and Thorns include their original charts, audio, Christmas/pixel characters, mall/school stages and available native remixes. Week 6 uses pixel arrows, holds, countdown, ratings, combo digits, health icons, A-Bot and pixel game-over assets with nearest-neighbor drawing. Parents' Mom note kinds select their alternate singing animations; no-animation and censor note kinds are retained.
+
+Story mode plays the installed game's exact Senpai/Roses/Thorns dialogue with original animated portraits/boxes, pixel font, typing sounds, music and transitions. Senpai/Roses Pico Mix conversations also play on first freeplay entry, matching their native scripts. Enter, Space or tap completes text/advances; Escape skips. Retries and chart-editor playtests skip introductions. Winter Horrorland has its native lights-on intro, and Eggnog Erect plays its 16-second Santa/parents ending before results. The original Roses story chart fades to red at beat 180, before Thorns. These built-in sequences are implemented in JavaScript; imported Haxe scripts still do not execute.
 
 ## Menus, characters and results
 

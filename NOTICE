@@ -50,3 +50,12 @@ assets/native-extras/*.json, assets/native-results/*.json and the variant
 catalog. The historical LICENSE is not a claim that all modern artwork is
 licensed under that historical license. The six-key arrangement is generated
 by this browser recreation and is not an original Funkin Crew chart.
+
+Weeks 5 and 6 were extracted from the same user-provided V-Slice 0.8.6
+installation: six songs, 40 additional original difficulty charts, Christmas
+and pixel artwork, native dialogue text/portraits/boxes/font/audio, story
+intros and Eggnog Erect outro timelines. Their original copyrights and
+credits remain intact. Specific musical/chart credits are retained in the
+variant catalog; stage/character source paths are in native-content.json;
+dialogue/cutscene provenance is in assets/story-intros/pack.json and
+eggnog-pack.json. Nearest-neighbor pixel textures preserve original pixels.
