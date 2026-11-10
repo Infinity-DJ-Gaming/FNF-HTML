@@ -1,0 +1,3 @@
+// Vocal stems in the built-in catalog are already aligned to their native vocal offsets.
+// An alternate instrumental may add a shared extra vocal offset (Roses: +4000/-4000).
+export function builtinTrackOffsets(record,instrumental=null){const offsets=record?.metadataOffsets||{},inst=Number(offsets.instrumental)||0;if(!instrumental)return[inst,inst];const alternate=Number(offsets.altInstrumentals?.[instrumental])||0,values=Object.values(offsets.altVocals?.[instrumental]||{}).map(Number).filter(Number.isFinite),vocal=values.length&&values.every(v=>v===values[0])?values[0]:0;return[inst+alternate,inst+alternate+vocal];}

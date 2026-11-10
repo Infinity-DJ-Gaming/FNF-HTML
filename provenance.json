@@ -85,5 +85,5 @@
     "assets/data/dadbattle/dadbattle-hard.json",
     "LICENSE"
   ],
-  "distribution": "Static release. Assets flattened to root; Sparrow XML replaced with atlases.json; app.js bundles the new engine."
+  "distribution": "Static release. Assets flattened to root; Sparrow XML replaced with atlases.json; app.js loads the browser engine modules."
 }
