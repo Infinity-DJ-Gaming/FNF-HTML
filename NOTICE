@@ -59,3 +59,10 @@ credits remain intact. Specific musical/chart credits are retained in the
 variant catalog; stage/character source paths are in native-content.json;
 dialogue/cutscene provenance is in assets/story-intros/pack.json and
 eggnog-pack.json. Nearest-neighbor pixel textures preserve original pixels.
+
+Week 7 and Weekend 1 use original assets from the user's installed
+Friday Night Funkin' V-Slice 0.8.6. Sky Reborn uses artwork, audio and charts
+from the supplied SKYREBORN archive by st4rcannon, GENZU and collaborators.
+The original mod's contributor credits, individual song credits, and media
+provenance are in assets/expanded/menu.json and assets/expanded/songs.json.
+The browser engine reimplements selected gameplay and cutscene behaviors.

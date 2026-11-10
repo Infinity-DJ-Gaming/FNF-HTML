@@ -1,8 +1,14 @@
-# Friday Night Funkin' — Tutorial + Weeks 1–6
+# Friday Night Funkin' — Weeks 1–7, Weekend 1 and Sky Reborn
 
 Independent Canvas / Web Audio browser recreation for GitHub Pages. Original game, artwork and music by ninjamuffin99, PhantomArcade, evilsk8r, Kawai Sprite and the Funkin Crew. [Support the original game](https://ninja-muffin24.itch.io/funkin). See NOTICE, LICENSE and provenance.json for attribution.
 
 ## Songs and play modes
+
+Story Mode adds Tankman ft. JohnnyUtah (Ugh, Guns, Stress), Due Debts (Darnell, Lit Up, 2hot, Blazin') and Sky Reborn (Wife Forever, Sky, Manifest). These campaigns include their original video cutscenes. Weekend 1 plays as Pico. 2hot has its spray-can and gun actions, and Blazin' centers the player's lanes and uses punches, blocks, dodges and uppercuts.
+
+In Freeplay, press **Tab**, move down from Boyfriend to **Sky**, and press **Enter**. Sky gets her own DJ, score records, results and 23 Sky Mixes. Boyfriend and Pico have their own charts for the Sky Reborn songs. Open **Sky Gallery** from the main menu. The original **S**, **K**, **Y** main-menu secret starts Sky Lyrics.
+
+The built-in Sky integration ports chart data and selected native scripts to JavaScript. Some special scene choreography, effects and optional presentation differ from the desktop mod. The gallery uses its bundled still backgrounds.
 
 Story and freeplay include Tutorial, Daddy Dearest, Spooky Month, Pico, Mommy Mearest, Red Snow and Hating Simulator: 19 base songs and 123 difficulty charts. The available original Erect/Nightmare and Pico Mix arrangements are included with synchronized vocals. Variants absent from the installed game are not invented (for example, no MILF Erect or Week 4 Pico Mix).
 
