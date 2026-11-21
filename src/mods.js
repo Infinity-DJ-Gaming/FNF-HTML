@@ -1,8 +1,8 @@
-import {EXTRA_EVENT_SCHEMAS,extensionPackage} from './extra-events.js?v=5659dbbcbf5f4f';
-import {ZipArchive} from './zip.js?v=5659dbbcbf5f4f';
-import {vsliceLevels,vsliceToClassic} from './vslice.js?v=5659dbbcbf5f4f';
-import {loadModVisuals,loadModFreeplayIcon} from './mod-visuals.js?v=5659dbbcbf5f4f';
-import {isBuiltInQtDuplicate} from './expanded-content.js?v=5659dbbcbf5f4f';
+import {EXTRA_EVENT_SCHEMAS,extensionPackage} from './extra-events.js?v=52a31721d8bc6d';
+import {ZipArchive} from './zip.js?v=52a31721d8bc6d';
+import {vsliceLevels,vsliceToClassic} from './vslice.js?v=52a31721d8bc6d';
+import {loadModVisuals,loadModFreeplayIcon} from './mod-visuals.js?v=52a31721d8bc6d';
+import {isBuiltInQtDuplicate} from './expanded-content.js?v=52a31721d8bc6d';
 const MOD_EVENTS=new Set([...Object.keys(EXTRA_EVENT_SCHEMAS),'FocusCamera','ZoomCamera','PlayAnimation','SetCameraBop','ScrollSpeed','SetTargetBopSpeed','SetHealthIcon']);
 const MOD_EXTENSIONS=['ogg','mp3','wav'];
 const MOD_ESCAPE=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

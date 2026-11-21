@@ -1,5 +1,5 @@
-import {clamp} from './core.js?v=5659dbbcbf5f4f';
-import {eventEase} from './song-events.js?v=5659dbbcbf5f4f';
+import {clamp} from './core.js?v=52a31721d8bc6d';
+import {eventEase} from './song-events.js?v=52a31721d8bc6d';
 
 export const isDefeat=choice=>choice?.baseSong==='defeat'&&choice?.source==='impostor-week4';
 export const changeComboLimit=(current,delta)=>(Math.round(current)+Math.round(delta)+6)%6;
@@ -120,6 +120,7 @@ export function campaignSingers(note){
 }
 export function campaignPose(note){
   const kind=String(note.kind||'').toLowerCase();
+  if(kind==='livereaction'&&!note.player)return {name:'liveReaction',lock:false};
   if(kind==='death'&&!note.player)return {name:'death',lock:true};
   if(kind!=='play-anim')return null;
   const params=Object.fromEntries((note.params||[]).map(p=>[p.n??p.name,p.v??p.value]));

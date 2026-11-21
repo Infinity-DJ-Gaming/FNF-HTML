@@ -1,5 +1,5 @@
 // Public V-Slice song metadata/chart format, adapted without executing mod scripts.
-import {clamp} from './core.js?v=5659dbbcbf5f4f';
+import {clamp} from './core.js?v=52a31721d8bc6d';
 export function vsliceLevels(metadata,chart){const requested=metadata.playData?.difficulties;return (Array.isArray(requested)&&requested.length?requested:Object.keys(chart.notes||{})).filter(name=>Array.isArray(chart.notes?.[name]));}
 export function vsliceToClassic(metadata,chart,difficulty,{durationMs=0}={}){
   if(metadata.timeFormat&&metadata.timeFormat!=='ms')throw new Error('Only millisecond V-Slice charts are supported.');if(!Array.isArray(chart.notes?.[difficulty]))throw new Error('That difficulty has no chart notes.');

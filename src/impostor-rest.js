@@ -1,5 +1,5 @@
-import {clamp} from './core.js?v=5659dbbcbf5f4f';
-import {eventEase} from './song-events.js?v=5659dbbcbf5f4f';
+import {clamp} from './core.js?v=52a31721d8bc6d';
+import {eventEase} from './song-events.js?v=52a31721d8bc6d';
 
 export const IMPOSTOR_SKINS={none:'None',amongbf:'BF Crewmate',bfairship:'Airship BF',bfpolus:'Polus BF',bfsauce:'Chef BF','black-playable':'Mini Black','red-playable':'Mini Red','green-playable':'Mini Green',dripbf:'Drippy BF','stick-bf':'Stickmin BF','ghost-bf':'Ghost BF'};
 export const IMPOSTOR_PETS={nothing:'Nothing',crab:'Crab',dog:'Dog',elliepet:'Ellie Pet',frankendog:'Franken Dog',ham:'Ham','hamster-pet':'Hamster',minicrewmate:'Mini Crewmate',snowball:'Snowball',stickmin:'Stickmin',tomong:'Tomong',ufo:'UFO'};
@@ -13,6 +13,7 @@ export function restAssets(choice,native,settings){
  for(const id of [impostorSkin(choice,settings),impostorPet(choice,settings)]){
   const key=native.characterIds[id];if(key)names.add(key);if(native.iconAssets[id])names.add(native.iconAssets[id]);
  }
+ if(choice.baseSong==='boiling-point'&&native.impostor.heatwave)names.add(native.impostor.heatwave);
  if(choice.baseSong==='finale')for(const id of Object.values(native.impostor.finaleArt||{}))names.add(id);
  return [...names];
 }
@@ -90,8 +91,9 @@ export function drawFinaleHealth(ctx,assets,native,game,{down=false,aspect=1,ico
   if(down){ctx.translate(0,y*2+h);ctx.scale(1,-1);}assets.image(ctx,id,x,y,w,h);ctx.restore();
  };
  draw(art.healthRed,0,boundary);draw(art.healthBlue,boundary,red.width);
- icon?.(game.eventHealthIcon?.opponent||game.choice.opponent,x-90,y-28,.8,game.stats.health>1.6,false);
- icon?.(game.eventHealthIcon?.player||game.choice.characters.player,x+w/1.4+40,y-28,.5,game.stats.health<.4,true);
+ const healthY=down?32:650;
+ icon?.(game.eventHealthIcon?.opponent||game.choice.opponent,x-90,healthY-88-(game.stats.health>1.6?22:0)+(down?40:0),.8,game.stats.health>1.6,false);
+ icon?.(game.eventHealthIcon?.player||game.choice.characters.player,x+w/1.4+40,healthY-28,.5,game.stats.health<.4,true);
  return true;
 }
 export function defeatDeathSequence(choice){

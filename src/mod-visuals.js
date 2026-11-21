@@ -1,5 +1,5 @@
-import {clamp} from './core.js?v=5659dbbcbf5f4f';
-import {nativeFacing} from './rhythm.js?v=5659dbbcbf5f4f';
+import {clamp} from './core.js?v=52a31721d8bc6d';
+import {nativeFacing} from './rhythm.js?v=52a31721d8bc6d';
 function modAssetPath(zip,item,asset,extension){const [library,relative]=String(asset).includes(':')?String(asset).split(':',2):['',String(asset)],name=relative.replace(/^\/+/,''),ext=name.toLowerCase().endsWith('.'+extension)?'':'.'+extension;for(const candidate of [`${item.root}${library?library+'/':''}images/${name}${ext}`,`${item.root}images/${name}${ext}`,`${item.root}shared/images/${name}${ext}`,`${item.root}assets/${library?library+'/':''}images/${name}${ext}`,`${item.root}${name}${ext}`]){const found=zip.find(candidate);if(found)return found;}return zip.suffix('/images/'+name+ext)||zip.suffix('/'+name+ext);}
 function modDataPath(zip,item,type,id){for(const candidate of [`${item.root}data/${type}/${id}.json`,`${item.root}assets/data/${type}/${id}.json`]){const found=zip.find(candidate);if(found)return found;}return zip.suffix(`/data/${type}/${id}.json`);}
 async function modImage(zip,path){const img=new Image();img.src=await zip.url(path);await img.decode();if(img.width*img.height>64*1024*1024)throw new Error('Image exceeds the 64 megapixel browser texture limit.');return img;}

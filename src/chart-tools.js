@@ -1,4 +1,4 @@
-import {clamp,readJSON,parseChart} from './core.js?v=5659dbbcbf5f4f';
+import {clamp,readJSON,parseChart} from './core.js?v=52a31721d8bc6d';
 export const cloneChart=value=>structuredClone(value);
 export function validateChart(input){
   const data=typeof input==='string'?readJSON(input):cloneChart(input);const song=data.song&&typeof data.song==='object'?data.song:data;

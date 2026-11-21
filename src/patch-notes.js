@@ -1,4 +1,9 @@
 export const PATCH_NOTES = [
+  {title:'VS. Impostor: stage and script fidelity',sections:[
+    ['Original stage visibility','Hidden cast members stay hidden in Crewicide, Chippin, the Halloween tracks, Esculent and the other authored stages. Animated props retain their separate width and height scales.'],
+    ['Native screen effects','Grey’s week uses the original chromatic shader. Boiling Point uses the original heatwave texture and shader at the display’s full resolution.'],
+    ['Song-specific details','Ejected, Double Trouble, Danger and Turbulence restore their HUD and judgement movement. Torture hides its HUD during the original break. Green’s live-reaction notes and full native singing animations are supported.'],
+  ]},
   {
     title:'VS. Impostor: the remaining songs and cosmetics',
     sections:[

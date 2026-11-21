@@ -1,4 +1,4 @@
-import {laneAtPoint,mobileLaneRegion} from './rhythm.js?v=5659dbbcbf5f4f';
+import {laneAtPoint,mobileLaneRegion} from './rhythm.js?v=52a31721d8bc6d';
 export class TouchControls {
  constructor(root,{active,lanes,onPress,onRelease}){this.active=active;this.lanes=lanes;this.onPress=onPress;this.onRelease=onRelease;this.pointers=new Map();this.lanesDirty=true;this.surface=document.createElement('div');this.surface.id='touch-lanes';this.surface.hidden=true;this.surface.setAttribute('aria-label','Swipe note lanes');root.append(this.surface);
   this.surface.addEventListener('pointerdown',e=>{if(!this.active())return;e.preventDefault();this.surface.setPointerCapture(e.pointerId);this.move(e,true);});

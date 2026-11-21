@@ -1,5 +1,5 @@
-import {IMPOSTOR_SKINS,IMPOSTOR_PETS} from './impostor-rest.js?v=5659dbbcbf5f4f';
-import {CALIBRATION_BEAT as BEAT,CalibrationAudio,medianDelay} from './audio-timing.js?v=5659dbbcbf5f4f';
+import {IMPOSTOR_SKINS,IMPOSTOR_PETS} from './impostor-rest.js?v=52a31721d8bc6d';
+import {CALIBRATION_BEAT as BEAT,CalibrationAudio,medianDelay} from './audio-timing.js?v=52a31721d8bc6d';
 const MEDIA = 'assets/preferences/';
 const WIDTH = 1280;
 const HEIGHT = 720;
@@ -33,7 +33,7 @@ const GAMEPAD = {
   ...Object.fromEntries([4, 14, 13, 0, 1, 5].map((button, lane) => [SIX_NOTES[lane], [button]])),
 };
 
-import {SECRET_CHANCES} from './sky-effects.js?v=5659dbbcbf5f4f';
+import {SECRET_CHANCES} from './sky-effects.js?v=52a31721d8bc6d';
 
 export const PREFERENCE_DEFAULTS = Object.freeze({
   naughtyness: true, strumlineBackground: 0, flashingLights: true, cameraZooms: true,
@@ -939,7 +939,7 @@ export class ComboFeedback {
     this.pending = {due: time + 937.5 + sustain, combo: this.series, started: null};
   }
 
-  draw(ctx, {time, combo, bpm = 100, pixel = false, botplay = false, middlescroll = false, classicCombo, anchor = [640, 290]} = {}) {
+  draw(ctx, {time, combo, bpm = 100, pixel = false, botplay = false, middlescroll = false, classicCombo, anchor = [640, 290], popupMovement = [0,0]} = {}) {
     const popupAge = time - this.popupAt;
     const fadeStart = 60000 / bpm;
     if (this.settings.comboPopup && popupAge >= 0 && popupAge < fadeStart + 200) {
@@ -947,12 +947,12 @@ export class ComboFeedback {
       if (pixel && !image && !this.loading) this.load().catch(() => {});
       if (image) {
         const elapsed = popupAge / 1000;
-        const y = anchor[1] - 34 - 100 * elapsed + 200 * elapsed * elapsed;
+        const y = anchor[1] - 34 - 100 * elapsed + 200 * elapsed * elapsed + popupMovement[1];
         const scale = pixel ? 4 : .6;
         ctx.save();
         ctx.globalAlpha *= 1 - clamp((popupAge - fadeStart) / 200, 0, 1);
         if (pixel) ctx.imageSmoothingEnabled = false;
-        ctx.drawImage(image, anchor[0] - image.width * scale / 2, y, image.width * scale, image.height * scale);
+        ctx.drawImage(image, anchor[0] - image.width * scale / 2 + popupMovement[0], y, image.width * scale, image.height * scale);
         ctx.restore();
       }
     }

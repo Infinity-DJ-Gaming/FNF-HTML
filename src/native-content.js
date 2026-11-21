@@ -1,10 +1,10 @@
-import {BunnyShaders,isBadBunny} from './bad-bunny.js?v=5659dbbcbf5f4f';
-import {bpmAt} from './core.js?v=5659dbbcbf5f4f';
-import {nativeFacing} from './rhythm.js?v=5659dbbcbf5f4f';
-import {officialRequiredAssets} from './official-polish.js?v=5659dbbcbf5f4f';
-import {naughtyAnimation} from './preferences.js?v=5659dbbcbf5f4f';
-import {drawSkyAnimation} from './sky-polish.js?v=5659dbbcbf5f4f';
-import {loadExpandedAnimation} from './sky-ui.js?v=5659dbbcbf5f4f';
+import {BunnyShaders,isBadBunny} from './bad-bunny.js?v=52a31721d8bc6d';
+import {bpmAt} from './core.js?v=52a31721d8bc6d';
+import {nativeFacing} from './rhythm.js?v=52a31721d8bc6d';
+import {officialRequiredAssets} from './official-polish.js?v=52a31721d8bc6d';
+import {naughtyAnimation} from './preferences.js?v=52a31721d8bc6d';
+import {drawSkyAnimation} from './sky-polish.js?v=52a31721d8bc6d';
+import {loadExpandedAnimation} from './sky-ui.js?v=52a31721d8bc6d';
 
 const PICO_BASE_LABELS={idle:'Idle',singLEFT:'Left',singDOWN:'Down',singUP:'Up',singRIGHT:'Right'};
 const PICO_ACTION_LABELS={intro1:'Pissed Off',intro2:'Shoot and Return',cock:'Gun Reload',shoot:'Shoot',
@@ -96,7 +96,7 @@ export class NativeContent {
      const offset=((y+(reducedMotion?0:Math.max(0,time))*(prop.velocityY||0)/1000*worldScale)%h+h)%h;
      const transform=ctx.getTransform(),top=(0-transform.f)/transform.d,bottom=(ctx.canvas.height-transform.f)/transform.d;
      for(let yy=offset+Math.floor((top-offset)/h)*h-h;yy<bottom+h;yy+=h){
-       if(frame)assets.draw(ctx,prop.assetId,frame,x,yy,worldScale*scale[0]);
+       if(frame){ctx.save();ctx.translate(x,yy);ctx.scale(1,scale[1]/scale[0]);assets.draw(ctx,prop.assetId,frame,0,0,worldScale*scale[0]);ctx.restore();}
        else assets.image(ctx,prop.assetId,x,yy,w,h);
      }
    }
@@ -111,6 +111,6 @@ export class NativeContent {
  }
  if(prop.solid||String(prop.assetPath||'').startsWith('#')){ctx.fillStyle=prop.solid||prop.assetPath;ctx.fillRect(x,y,scale[0]*worldScale,scale[1]*worldScale);ctx.restore();return;}if(prop.name==='lights'){ctx.globalAlpha*=0.25+0.65*(1-(game.beat%4)/4);ctx.globalCompositeOperation='screen';}
  if(prop.flipX){ctx.translate(x,0);ctx.scale(-1,1);ctx.translate(-x,0);}
- if(assets.atlases[prop.assetId]){const choices=prop.animations||[],dance=period?Math.floor(game.beat/period)%2?'danceRight':'danceLeft':prop.startingAnimation,anim=choices.find(a=>a.name===(forced&&time<forced.until?forced.name:dance))||choices.find(a=>a.name===prop.startingAnimation)||choices[0]||{},frames=assets.frames(prop.assetId,anim.prefix||''),indices=anim.frameIndices,length=indices?.length||frames.length,elapsed=prop.animationTime??(forced&&time<forced.until?time-forced.since:period?((game.beat%period+period)%period)*60000/bpmAt(game.chart,time):time),offset=Math.floor(Math.max(0,elapsed)*(anim.frameRate||24)/1000),cursor=period||anim.looped===false?Math.min(length-1,offset):offset%length,index=indices?.[cursor]??cursor;assets.draw(ctx,prop.assetId,frames[index]||frames[0],x,y,worldScale*scale[0]);}
+ if(assets.atlases[prop.assetId]){const choices=prop.animations||[],dance=period?Math.floor(game.beat/period)%2?'danceRight':'danceLeft':prop.startingAnimation,anim=choices.find(a=>a.name===(forced&&time<forced.until?forced.name:dance))||choices.find(a=>a.name===prop.startingAnimation)||choices[0]||{},frames=assets.frames(prop.assetId,anim.prefix||''),indices=anim.frameIndices,length=indices?.length||frames.length,elapsed=prop.animationTime??(forced&&time<forced.until?time-forced.since:period?((game.beat%period+period)%period)*60000/bpmAt(game.chart,time):time),offset=Math.floor(Math.max(0,elapsed)*(anim.frameRate||24)/1000),cursor=period||anim.looped===false?Math.min(length-1,offset):offset%length,index=indices?.[cursor]??cursor;ctx.translate(x,y);ctx.scale(1,scale[1]/scale[0]);assets.draw(ctx,prop.assetId,frames[index]||frames[0],0,0,worldScale*scale[0]);}
  else {const logical=this.data.stageAssets[prop.assetId]?.logicalSize||this.data.ui?.[prop.assetId]?.logicalSize||[img.width,img.height];assets.image(ctx,prop.assetId,x,y,logical[0]*worldScale*scale[0],logical[1]*worldScale*scale[1]);}ctx.restore();}
 }

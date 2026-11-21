@@ -1,4 +1,4 @@
-import {clamp} from './core.js?v=5659dbbcbf5f4f';
+import {clamp} from './core.js?v=52a31721d8bc6d';
 const ABOT_COLUMN_X=[0,59,115,181,235,287,338],ABOT_COLUMN_Y=[0,-8,-11.5,-11.9,-11.4,-6.7,0.3];
 export function drawABot(ctx,assets,audio,{neneX,neneY,scale=0.57,time=0,bodyX=null,bodyY=null}={}){
   const x=bodyX??neneX+(-95+4)*scale,y=bodyY??neneY+(384-89+2)*scale,spectrum=audio.spectrum();ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
